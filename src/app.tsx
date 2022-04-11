@@ -1,7 +1,20 @@
-import React from "react";
+import React from 'react';
+import Layout from './components/Layout';
+import GlobalStyles from './styles/GlobalStyles';
+import { ThemeProvider } from 'styled-components';
+import light from './styles/Themes/light';
+import Dashboard from './pages/Dashboard';
 
-function App() {
-  return <h1>Hello World</h1>;
-}
+const App = () => {
+  return (
+    <ThemeProvider theme={light}>
+      <GlobalStyles />
+      <Layout>
+        <Dashboard />
+      </Layout>
+      ;
+    </ThemeProvider>
+  );
+};
 
 export default App;
